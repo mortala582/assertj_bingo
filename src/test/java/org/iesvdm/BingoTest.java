@@ -37,37 +37,17 @@ class BingoTest {
         }
         int cont12Blancos=0;
         for(int[] col: carton){
-
             int cont=0;
-            cont12Blancos=cont;
             for (int celda: col){
-                if(celda==-1) cont++;
+                if(celda==-1) {
+                    cont++;
+                    cont12Blancos++;
                 }
             assertThat(cont).isLessThan(3);
         }
+
+    }
         assertThat(cont12Blancos).isEqualTo(12);
-    }
-    @Test
-    void buscarFila(){
 
     }
-    @Test
-   void buscarColumna(){
-
-   }
-   @Test
-   void buscarValorRepetido(){
-
-   }
-   @Test
-   void pintarCarton(){
-
-   }
-   @Test
-   void insertarAlFinal(){
-
-   }
-   void ordenar(){
-
-   }
-}
+    }
