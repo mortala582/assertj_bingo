@@ -28,13 +28,13 @@ class BingoTest {
         // Los paso a mi matriz o array bidimensional:
         int[][] carton = {col0, col1, col2, col3, col4, col5, col6, col7, col8};
         Bingo.ponerBlancos(carton);
-        for(int j=0;j<carton[0].length;j++){
-            for(int i = 0; i<carton.length; i++){
-                System.out.println((carton[i][j]==0 ? "0" :  carton[i][j])+" ");
-
+        for (int j = 0; j < carton[0].length; j++) {
+            for( int i=0; i < carton.length; i++) {
+                System.out.print((carton[i][j] == 0 ? " 0" : carton[i][j])+ " ");
             }
             System.out.println("");
         }
+
         int cont12Blancos=0;
         for(int[] col: carton){
             int cont=0;
