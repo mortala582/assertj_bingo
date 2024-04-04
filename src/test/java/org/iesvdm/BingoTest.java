@@ -107,8 +107,27 @@ class BingoTest {
     /* en pintarCarton() pinta el cartón y realiza esta búsqueda para tachar el número si está en el array de bolas y en el cartón:
     *boolean seTacha = buscarValorRepetido(arrayBolas, arrayBi[j][i]) volvemos a repetir el método de buscar repetido que ya hemos validado
     *y pintar el cartón, es bastante gráfico y no se me ocurre mejor manera de testearlo.*/
+
+    /* Valida que: 1.- el elemento que pasa realmente lo introduce en la última posición
+    * 2.- compruebo que el array original tiene una posición menos que el resultante*/
     @Test
     void  insertarAlFinalTest(){
+        int[] prueba ={3,6,8,10};
+        int[] resultado=new int[0];
+
+        resultado=Bingo.insertarAlFinal(prueba,55);
+        //1.-
+        assertThat(resultado[4]).isEqualTo(55);
+        //2.-
+        assertThat(prueba.length).isEqualTo(resultado.length-1);
+
+    }
+    /*Hay que probar que está ordenado despues de pasar por el método */
+    @Test
+    void ordenarTest(){
+        int[] prueba ={13,26,8,10};
+        Bingo.ordenar(prueba);
+        assertThat(prueba).isSorted();
 
     }
     }

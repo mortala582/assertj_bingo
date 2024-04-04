@@ -2,6 +2,8 @@ package org.iesvdm;
 
 import org.junit.jupiter.api.Test;
 
+import javax.swing.text.Utilities;
+
 import static org.iesvdm.UtilesArrays.limpiar;
 import static org.iesvdm.UtilesArrays.rellenar;
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,17 +59,33 @@ class UtilesArraysTest {
         assertThat(arraySalida).containsOnly(valor);
 
     }
+    /* Este método está tambíen en Bingo, copio la prueba test*/
     @Test
-    void insertarAlFinal(){
+    void insertarAlFinalTest(){
+        int[] prueba ={3,6,8,10};
+        int[] resultado=new int[0];
 
+        resultado=Bingo.insertarAlFinal(prueba,55);
+        //1.-
+        assertThat(resultado[4]).isEqualTo(55);
+        //2.-
+        assertThat(prueba.length).isEqualTo(resultado.length-1);
+    }
+    /*Hay que probar que el elemento que inserta lo introduce en el índice 0  */
+    @Test
+    void insertarAlPrincipioTest(){
+        int[] prueba ={3,6,8,10};
+        int[] resultado=new int[0];
+
+        resultado= UtilesArrays.insertarAlPrincipio(prueba,55);
+        //1.-
+        assertThat(resultado[0]).isEqualTo(55);
+        //2.-
+        assertThat(prueba.length).isEqualTo(resultado.length-1);
 
     }
     @Test
-    void insertarAlPrincipio(){
-
-    }
-    @Test
-    void insertarEnPosicion(){
+    void insertarEnPosicionTest(){
 
     }
     @Test
